@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Cadastro - 4 Patas</title>
+    <link rel="stylesheet" href="./frontend/css/style-login.css">
+</head>
+<body>
+
+<header class="header-faixa">
+    ENTRE-LINHAS
+</header>
+
+<div class="cadastro-container">
+
+    <div class="titulo">
+        Cadastro
+    </div>
+
+    <form action="#" method="post">
+
+        <div class="campo-grupo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="genero">Gênero</label>
+            <div class="genero-container">
+                <select id="genero" name="genero">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                    <option value="nao-informar">Prefiro não informar</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="data-nascimento">Data de nascimento</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="usuario">Nome de usuário</label>
+            <input type="text" id="usuario" name="usuario" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+
+        <div class="campo-grupo">
+            <label for="confirmacao-senha">Confirmação de senha</label>
+            <input type="password" id="confirmacao-senha" name="confirmacao-senha" required>
+        </div>
+
+        <div class="botoes-container">
+            <button type="submit" onclick="window.location.href='login.html'; return false;">
+                Confirmar cadastro
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<footer class="footer-faixa">
+    &copy; 2025 Entre-Linhas - Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
