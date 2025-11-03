@@ -8,7 +8,7 @@
     font-weight: ;
     line-height: 0.7;
     font-style: italic;
-    font-family: 'Style Script', cursive;
+    font-family: 'Times New Roman', serif;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: auto;
 }
@@ -72,6 +72,7 @@ body::before {
     padding: 30px;
     box-sizing: border-box;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
 }
 
 .campo-grupo select {
@@ -80,7 +81,7 @@ body::before {
     appearance: none;
     width: 100%;
     padding: 10px 5px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 10px;
     box-sizing: border-box;
     background: #fff;
@@ -91,7 +92,7 @@ body::before {
     font-size: 1em;
 }
 
-.genero-container {
+.servico-container {
      position: relative;
 }
 
@@ -106,6 +107,7 @@ body::before {
     font-size: 1em;
 }
 
+.campo-grupo input[type="text"],
 .campo-grupo input[type="text"],
 .campo-grupo input[type="email"],
 .campo-grupo input[type="tel"],
