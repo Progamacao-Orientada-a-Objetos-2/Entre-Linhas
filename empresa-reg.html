@@ -69,10 +69,8 @@
 
             <div class="campo-grupo">
                 <label for="cidade">Cidade</label>
-                <select id="cidade" name="cidade" required>
-                    <option value="" disabled selected>Selecione a cidade</option>
-                    <!-- opções carregadas pelo JS -->
-                </select>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" list="lista-cidades" required>
+                <datalist id="lista-cidades"></datalist>
             </div>
 
             <div class="campo-grupo">
