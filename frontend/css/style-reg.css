@@ -124,10 +124,12 @@ body::before {
 }
 
 .botoes-container {
-    text-align: right;
+    display: flex;
+    justify-content: space-between; /* Voltar à esquerda, Confirmar à direita */
     margin-top: 40px;
 }
 
+/* Botão Confirmar (mantém o seu estilo atual) */
 .botoes-container button {
     padding: 12px 25px;
     border: 1px solid #000;
@@ -145,6 +147,28 @@ body::before {
 }
 
 .botoes-container button:active {
+    box-shadow: 1px 1px 0 0 #000;
+    transform: translate(2px, 2px);
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    padding: 12px 25px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 0 #000;
+    transition: all 0.1s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #e2e2e2;
+}
+
+.btn-voltar:active {
     box-shadow: 1px 1px 0 0 #000;
     transform: translate(2px, 2px);
 }
