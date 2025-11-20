@@ -1,4 +1,4 @@
-// frontend/js/cidades-estados.js
+// cidades-estados.js
 
 document.addEventListener("DOMContentLoaded", function () {
     const selectEstado = document.getElementById("estado");
@@ -42,3 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+
