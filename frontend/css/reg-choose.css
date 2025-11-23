@@ -1,44 +1,40 @@
 /* Cabeçalho */
 .header-faixa {
     width: 100%;
-    background-color: #dedede;
-    color: #000;
-    padding: 15px 0;
+    background-color: #fdfdfd;
+    color: #7d1758;
+    padding: 20px 0;
     text-align: center;
-    font-size: 4.0em;
-    font-weight: ;
-    line-height: 0.7;
-    font-style: italic;
+    font-size: 3.5rem;
     font-family: 'Times New Roman', serif;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    border-bottom: 2px solid #1a1a1a;
     margin-bottom: auto;
 }
 
 /* Corpo */
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Poppins', sans-serif;
-
     background-image: url('../images/backg-reg.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-height: 100vh;
+    margin: 0;
+    color: #1a1a1a;
 }
 
+/* Sobreposição escura para leitura */
 body::before {
     content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 240, 245, 0.4);
+    backdrop-filter: blur(2px);
     z-index: -1;
 }
 
