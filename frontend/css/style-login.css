@@ -31,7 +31,7 @@ body {
 
 .campo {
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .campo label {
@@ -55,16 +55,21 @@ body {
     border-color: #ab47bc;
 }
 
-.link {
-    display: block;
-    margin-bottom: 1.3rem;
-    text-align: right;
-    color: #7b1fa2;
-    text-decoration: none;
-    font-size: 0.9rem;
+.login-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
 }
 
-.link:hover {
+.login-links a {
+    font-size: 1.0rem;
+    text-decoration: none;
+    color: #940083;
+    transition: color 0.2s ease;
+}
+
+.login-links a:hover {
+    color: #893a99;
     text-decoration: underline;
 }
 
