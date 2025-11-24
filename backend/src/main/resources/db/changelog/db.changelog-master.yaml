@@ -11,3 +11,6 @@ databaseChangeLog:
   - include:
       file: 004_create_service_request.sql
       relativeToChangelogFile: true
+  - include:
+      file: 005_create_chat.sql
+      relativeToChangelogFile: true
