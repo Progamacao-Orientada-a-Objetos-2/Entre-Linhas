@@ -23,17 +23,6 @@ CREATE TABLE user_account (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     deleted_at TIMESTAMP NULL,
 
-    CONSTRAINT fk_user_main_service
-        FOREIGN KEY (main_service_id) REFERENCES service(id)
-        ON DELETE SET NULL,
-
-    CONSTRAINT unique_cpf UNIQUE (cpf) WHERE (cpf IS NOT NULL),
-    CONSTRAINT unique_cnpj UNIQUE (cnpj) WHERE (cnpj IS NOT NULL),
-    CONSTRAINT unique_company_ie UNIQUE (state_registration)
-        WHERE (user_type = 'company' AND state_registration IS NOT NULL),
-
-    CONSTRAINT unique_phone UNIQUE (phone) WHERE (phone IS NOT NULL),
-
     CHECK (
         (user_type <> 'faccionista') OR
         (cpf IS NOT NULL AND birth_date IS NOT NULL AND cnpj IS NULL AND state_registration IS NULL)
