@@ -1,1 +1,4 @@
-# databaseChangeLog:
+databaseChangeLog:
+  - include:
+      file: 001_create_user_account.sql
+      relativeToChangelogFile: true
