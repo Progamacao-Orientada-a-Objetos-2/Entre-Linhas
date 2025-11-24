@@ -26,3 +26,9 @@ databaseChangeLog:
   - include:
       file: 009_create_review.sql
       relativeToChangelogFile: true
+  - include:
+      file: 010_create_user_indexes.sql
+      relativeToChangelogFile: true
+  - include:
+      file: 011_add_fk_user_account_main_service.sql
+      relativeToChangelogFile: true
