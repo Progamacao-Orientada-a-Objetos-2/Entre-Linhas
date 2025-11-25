@@ -11,5 +11,5 @@ Backend desenvolvido em **Java 21** com **Spring Boot**.
 - Spring Web
 - Spring Data JPA
 - Spring Security
-- PostgreSQL (produção)
-- H2 Database (desenvolvimento)
+- PostgreSQL (desenvolvimento e produção)
+- H2 Database (testes)
