@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputCidade = document.getElementById("cidade");
     const listaCidades = document.getElementById("lista-cidades");
 
+    if (!selectEstado || !inputCidade || !listaCidades) {
+        return;
+    }
+
     // 🔹 1) Carregar os estados
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome")
         .then((response) => response.json())
@@ -44,5 +48,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ---------------------------------------------------------------------------------------------------------------------
-
 

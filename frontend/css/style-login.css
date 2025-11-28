@@ -79,6 +79,22 @@ body::before {
     transition: .2s ease;
 }
 
+.campo.senha-wrapper {
+    position: relative;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 12px;
+    top: 35px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #7d1758;
+    padding: 0;
+}
+
 .campo input:focus {
     background: #fff;
     box-shadow: 4px 4px 0 0 #d7aefb;
@@ -141,4 +157,18 @@ body::before {
 .btn-login:active {
     transform: translate(5px, 5px);
     box-shadow: 0 0 0 0 #1a1a1a;
+}
+
+.feedback {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.feedback.error {
+    color: #b00020;
+}
+
+.feedback.success {
+    color: #1b5e20;
 }

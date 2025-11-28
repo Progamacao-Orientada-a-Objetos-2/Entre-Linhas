@@ -85,12 +85,42 @@ body::before {
     transition: all 0.2s ease;
 }
 
+.campo-grupo.senha-wrapper {
+    position: relative;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #7d1758;
+    padding: 0;
+}
+
 /* Efeito quando clica no input */
 .campo-grupo input:focus,
 .campo-grupo select:focus {
     background: #fff;
     box-shadow: 4px 4px 0 0 #d7aefb;
     transform: translate(-2px, -2px);
+}
+
+.feedback {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.feedback.error {
+    color: #b00020;
+}
+
+.feedback.success {
+    color: #1b5e20;
 }
 
 /* Ajuste da seta do Select */

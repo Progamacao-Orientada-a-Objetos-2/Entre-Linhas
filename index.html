@@ -14,16 +14,17 @@
     <h2>Entre-Linhas</h2>
     <p class="descricao">Acesse sua conta para continuar</p>
 
-    <form>
+    <form id="login-form">
 
         <div class="campo">
             <label for="email">E-mail</label>
             <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
         </div>
 
-        <div class="campo">
+        <div class="campo senha-wrapper">
             <label for="senha">Senha</label>
             <input type="password" id="senha" placeholder="Digite sua senha" required>
+            <button type="button" class="toggle-senha" data-target="senha">👁</button>
         </div>
 
         <div class="login-links">
@@ -31,9 +32,13 @@
             <a href="forg-pwd.html">Esqueci minha senha</a>
         </div>
 
+        <div id="feedback" class="feedback"></div>
+
         <button type="submit" class="btn-login">Entrar</button>
     </form>
 </div>
+
+<script src="frontend/js/auth.js"></script>
 
 </body>
 </html>

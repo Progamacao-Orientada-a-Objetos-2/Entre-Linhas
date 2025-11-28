@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Linhas - Meu Perfil</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="frontend/css/faccionista.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="topbar home-topbar">
+    <div class="logo">
+        <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
+        Entre-Linhas
+    </div>
+    <div class="header-actions">
+        <div class="user-meta">
+            <div id="user-name" class="user-name"></div>
+            <span class="pill" id="user-type"></span>
+        </div>
+        <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+        <div class="menu-panel" id="menu-panel">
+            <button data-action="profile">Meu perfil</button>
+            <button data-action="logout">Sair</button>
+            <button class="danger" data-action="delete">Deletar conta</button>
+        </div>
+    </div>
+</header>
+<div id="menu-overlay" class="menu-overlay"></div>
+
+<main class="container home-content">
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Meu perfil</h2>
+            <button class="btn-secondary" data-link="faccionista-page.html">Voltar para a busca</button>
+        </div>
+        <p class="subtitle">Atualize suas informações e mantenha seu perfil sempre completo.</p>
+        <form id="profile-form" class="form-grid">
+            <div class="form-row">
+                <div>
+                    <label class="label" for="profile-name">Nome completo</label>
+                    <input type="text" id="profile-name" required>
+                </div>
+                <div>
+                    <label class="label" for="profile-email">E-mail</label>
+                    <input type="email" id="profile-email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label class="label" for="profile-phone">Telefone</label>
+                    <input type="text" id="profile-phone">
+                </div>
+                <div>
+                    <label class="label" for="profile-service">Serviço principal</label>
+                    <select id="profile-service"></select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label class="label" for="profile-state">Estado</label>
+                    <input type="text" id="profile-state">
+                </div>
+                <div>
+                    <label class="label" for="profile-city">Cidade</label>
+                    <input type="text" id="profile-city">
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label class="label" for="profile-desc">Descrição</label>
+                    <textarea id="profile-desc" placeholder="Conte sobre você, sua facção ou empresa"></textarea>
+                </div>
+                <div class="availability-box">
+                    <label class="label">Disponibilidade</label>
+                    <label class="switch-label"><input type="checkbox" id="profile-availability"> Estou disponível</label>
+                </div>
+            </div>
+            <div class="form-row" id="specific-fields"></div>
+            <div class="form-actions">
+                <button class="btn-primary" type="submit">Salvar alterações</button>
+            </div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    © 2025 Entre-Linhas — Todos os direitos reservados.
+</footer>
+
+<script src="frontend/js/common.js"></script>
+<script src="frontend/js/my-profile.js"></script>
+</body>
+</html>

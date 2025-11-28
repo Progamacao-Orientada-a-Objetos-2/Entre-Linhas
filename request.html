@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Linhas - Solicitar serviço</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="frontend/css/app-shell.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Entre Linhas</div>
+    <div class="user-chip">
+        <div>
+            <div id="user-name"></div>
+            <div class="pill" id="user-type"></div>
+        </div>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+    </div>
+</header>
+<div id="menu-overlay" class="menu-overlay"></div>
+<aside id="menu-drawer" class="menu-drawer">
+    <h3>Menu</h3>
+    <ul class="menu-list">
+        <li><button data-link="faccionista-page.html">Busca</button></li>
+        <li><button data-link="my-profile.html">Meu perfil</button></li>
+        <li><button id="menu-logout">Sair</button></li>
+    </ul>
+</aside>
+
+<main class="page">
+    <div class="section-nav">
+        <button class="btn-secondary" onclick="window.history.back();">Voltar</button>
+    </div>
+    <div class="card">
+        <h2 class="section-title">Solicitar serviço</h2>
+        <form id="request-form" class="form-grid">
+            <div class="form-row">
+                <div>
+                    <label class="label" for="request-name">Nome do pedido</label>
+                    <input id="request-name" type="text" required>
+                </div>
+                <div>
+                    <label class="label" for="faction-id">ID da facção</label>
+                    <input id="faction-id" type="number" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div>
+                    <label class="label" for="service-select">Serviço</label>
+                    <select id="service-select" required></select>
+                </div>
+            </div>
+            <label class="label" for="request-description">Descrição</label>
+            <textarea id="request-description" placeholder="Detalhe o que precisa"></textarea>
+            <button class="btn-primary" type="submit">Enviar solicitação</button>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+        </form>
+    </div>
+</main>
+
+<script src="frontend/js/common.js"></script>
+<script src="frontend/js/request.js"></script>
+</body>
+</html>

@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Cadastro - Empresa</title>
     <link rel="stylesheet" href="frontend/css/style-reg.css">
 </head>
-
 <body>
-
     <header class="header-faixa">
         Entre-Linhas
     </header>
 
     <div class="cadastro-container">
-
         <div class="titulo">
-            Cadastro
+            Cadastro - Empresa
         </div>
 
-        <form action="index.html" method="post">
+        <form id="register-form" data-user-type="COMPANY">
             <div class="campo-grupo">
                 <label for="nome">Nome completo</label>
                 <input type="text" id="nome" name="nome" required>
@@ -27,25 +24,12 @@
 
             <div class="campo-grupo">
                 <label for="cnpj">CNPJ</label>
-                <input type="text" id="cnpj" name="cnpj"
-                       placeholder="00.000.000/0000-00"
-                       pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}"
-                       title="Digite o CNPJ no formato: 00.000.000/0000-00"
-                       required>
+                <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" required>
             </div>
 
             <div class="campo-grupo">
-                <label for="inscricao-estadual">Inscrição Estadual</label>
-                <input type="text" id="inscricao-estadual" name="inscricao-estadual"
-                       placeholder="Apenas números"
-                       pattern="\d{9,14}"
-                       title="Digite entre 9 e 14 números, sem pontos ou traços"
-                       required>
-            </div>
-
-            <div class="campo-grupo">
-                <label for="data-nascimento">Data de nascimento</label>
-                <input type="date" id="data-nascimento" name="data-nascimento" required>
+                <label for="inscricao-estadual">Inscrição estadual</label>
+                <input type="text" id="inscricao-estadual" name="inscricao-estadual" required>
             </div>
 
             <div class="campo-grupo">
@@ -62,7 +46,6 @@
                 <label for="estado">Estado</label>
                 <select id="estado" name="estado" required>
                     <option value="" disabled selected>Selecione o estado</option>
-                    <!-- opções carregadas pelo JS -->
                 </select>
             </div>
 
@@ -73,26 +56,25 @@
             </div>
 
             <div class="campo-grupo">
-                <label for="serviço">Serviço</label>
-                <div class="servico-container">
-                    <select id="serviço" name="serviço">
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="x">x</option>
-                        <option value="y">y</option>
-                        <option value="z">z</option>
-                    </select>
-                </div>
+                <label for="servico-id">Serviço principal</label>
+                <select id="servico-id" name="servico-id" required>
+                    <option value="" disabled selected>Selecione</option>
+                </select>
             </div>
 
-            <div class="campo-grupo">
+            <div class="campo-grupo senha-wrapper">
                 <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required>
+                <input type="password" id="senha" name="senha" minlength="8" required>
+                <button type="button" class="toggle-senha" data-target="senha">👁</button>
             </div>
 
-            <div class="campo-grupo">
+            <div class="campo-grupo senha-wrapper">
                 <label for="confirmacao-senha">Confirmação de senha</label>
-                <input type="password" id="confirmacao-senha" name="confirmacao-senha" required>
+                <input type="password" id="confirmacao-senha" name="confirmacao-senha" minlength="8" required>
+                <button type="button" class="toggle-senha" data-target="confirmacao-senha">👁</button>
             </div>
+
+            <div id="feedback" class="feedback"></div>
 
             <div class="botoes-container">
                 <a href="choose-reg.html" class="btn-voltar">Voltar</a>
@@ -100,7 +82,6 @@
                     Confirmar cadastro
                 </button>
             </div>
-
         </form>
     </div>
 
@@ -109,6 +90,6 @@
     </footer>
 
     <script src="frontend/js/main.js"></script>
-
+    <script src="frontend/js/auth.js"></script>
 </body>
 </html>

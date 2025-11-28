@@ -3,60 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entre-Linhas — Faccionista</title>
+    <title>Entre-Linhas — Conexões</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./frontend/css/faccionista.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
-            Entre-Linhas
+<header class="topbar home-topbar">
+    <div class="logo">
+        <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
+        Entre-Linhas
+    </div>
+
+    <div class="header-actions">
+        <div class="user-meta">
+            <div id="user-name" class="user-name"></div>
+            <span class="pill" id="user-type"></span>
         </div>
-        <div class="header-icons">
-            <button class="icon-btn">💬</button>
-            <button class="icon-btn">👤</button>
+        <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+        <div class="menu-panel" id="menu-panel">
+            <button data-action="profile">Meu perfil</button>
+            <button data-action="logout">Sair</button>
+            <button class="danger" data-action="delete">Deletar conta</button>
         </div>
-    </header>
+    </div>
+</header>
+<div id="menu-overlay" class="menu-overlay"></div>
 
-    <!-- CONTEÚDO -->
-    <main class="container">
-
-        <h2>Facções</h2>
-
-        <div class="panel">
-            <div class="cards-grid">
-
-                <div class="card">
-                    <h3>Fação Estrela</h3>
-                    <p><strong>Serviço:</strong> Corte e Costura</p>
-                    <button class="btn-ver">Ver detalhes</button>
-                </div>
-
-                <div class="card">
-                    <h3>Costura Bella</h3>
-                    <p><strong>Serviço:</strong> Acabamento</p>
-                    <button class="btn-ver">Ver detalhes</button>
-                </div>
-
-                <div class="card">
-                    <h3>Mãos de Ouro</h3>
-                    <p><strong>Serviço:</strong> Montagem</p>
-                    <button class="btn-ver">Ver detalhes</button>
-                </div>
-
+<main class="container home-content">
+    <section class="panel">
+        <h2>Encontre quem você procura</h2>
+        <p class="subtitle">Pesquise pelo nome e refine por filtros para ver apenas as entidades relevantes para o seu perfil.</p>
+        <div class="search-bar">
+            <i class="fa fa-search"></i>
+            <input id="search-name" type="search" placeholder="Buscar pelo nome da entidade" autocomplete="off">
+        </div>
+        <div class="filters-grid">
+            <div class="filter-field">
+                <label for="filter-city">Cidade</label>
+                <input id="filter-city" type="text" placeholder="Ex.: São Paulo">
+            </div>
+            <div class="filter-field">
+                <label for="filter-state">Estado</label>
+                <input id="filter-state" type="text" placeholder="UF">
+            </div>
+            <div class="filter-field">
+                <label for="filter-service">Serviço</label>
+                <select id="filter-service"></select>
+            </div>
+            <div class="filter-field">
+                <label for="filter-type">Tipo de entidade</label>
+                <select id="filter-type"></select>
             </div>
         </div>
+    </section>
 
-    </main>
+    <section class="panel results-panel">
+        <div class="panel-header">
+            <h2>Resultados</h2>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+        </div>
+        <div id="results" class="cards-grid"></div>
+    </section>
+</main>
 
-    <!-- RODAPÉ -->
-    <footer>
-        © 2025 Entre-Linhas — Todos os direitos reservados.
-    </footer>
+<footer>
+    © 2025 Entre-Linhas — Todos os direitos reservados.
+</footer>
 
+<script src="frontend/js/common.js"></script>
+<script src="frontend/js/home.js"></script>
 </body>
 </html>
