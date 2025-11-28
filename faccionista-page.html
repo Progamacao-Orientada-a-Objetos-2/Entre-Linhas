@@ -10,53 +10,80 @@
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
-            Entre-Linhas
-        </div>
-        <div class="header-icons">
-            <button class="icon-btn">💬</button>
-            <button class="icon-btn">👤</button>
-        </div>
-    </header>
+<header>
+    <div class="logo">
+        <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
+        Entre-Linhas
+    </div>
 
-    <!-- CONTEÚDO -->
-    <main class="container">
+    <div class="header-icons">
+        <button class="icon-btn">👤</button>
+    </div>
+</header>
 
-        <h2>Facções</h2>
+<main class="container">
 
-        <div class="panel">
-            <div class="cards-grid">
+    <h2>Facções</h2>
 
-                <div class="card">
+    <div class="panel">
+        <div class="cards-grid">
+
+            <div class="card">
+                <div class="card-top">
                     <h3>Fação Estrela</h3>
-                    <p><strong>Serviço:</strong> Corte e Costura</p>
-                    <button class="btn-ver">Ver detalhes</button>
+                    <button class="btn-chat-card" data-faccao="Fação Estrela" title="Conversar com Façao Estrela">💬</button>
                 </div>
-
-                <div class="card">
-                    <h3>Costura Bella</h3>
-                    <p><strong>Serviço:</strong> Acabamento</p>
-                    <button class="btn-ver">Ver detalhes</button>
-                </div>
-
-                <div class="card">
-                    <h3>Mãos de Ouro</h3>
-                    <p><strong>Serviço:</strong> Montagem</p>
-                    <button class="btn-ver">Ver detalhes</button>
-                </div>
-
+                <p><strong>Serviço:</strong> Uniforme</p>
+                <button class="btn-ver">Ver detalhes</button>
             </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <h3>Costura Bella</h3>
+                    <button class="btn-chat-card" data-faccao="Costura Bella" title="Conversar com Costura Bella">💬</button>
+                </div>
+                <p><strong>Serviço:</strong> Jeans</p>
+                <button class="btn-ver">Ver detalhes</button>
+            </div>
+
+            <div class="card">
+                <div class="card-top">
+                    <h3>Mãos de Ouro</h3>
+                    <button class="btn-chat-card" data-faccao="Mãos de Ouro" title="Conversar com Mãos de Ouro">💬</button>
+                </div>
+                <p><strong>Serviço:</strong> Social</p>
+                <button class="btn-ver">Ver detalhes</button>
+            </div>
+
         </div>
+    </div>
 
     </main>
 
-    <!-- RODAPÉ -->
+    <div id="chat-widget" class="chat-widget hidden">
+
+        <div class="chat-header">
+            <div class="chat-title">
+                <span>💬</span>
+                <span id="chat-context-title">Bate-papo</span>
+            </div>
+            <button id="close-chat" class="chat-close-btn">&times;</button>
+        </div>
+
+        <div id="chat-messages" class="chat-body">
+        </div>
+
+        <form id="chat-form" class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button type="submit" class="chat-send-btn">➤</button>
+        </form>
+    </div>
+
     <footer>
         © 2025 Entre-Linhas — Todos os direitos reservados.
     </footer>
+
+    <script src="frontend/js/main.js"></script>
 
 </body>
 </html>

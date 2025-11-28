@@ -149,3 +149,180 @@ footer {
     font-size: 0.9rem;
     margin-top: auto;
 }
+
+/* =========================================
+    WIDGET DE CHAT - ESTILO NEO-BRUTALISTA
+    ========================================= */
+
+ /* O Container do Chat (Fixo no canto inferior direito) */
+ .chat-widget {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     width: 350px;
+     height: 450px;
+     background-color: #ffffff;
+     border: 2px solid #1a1a1a;
+     border-radius: 12px;
+     box-shadow: 8px 8px 0 0 rgba(0,0,0,0.8); /* Sombra Dura */
+     display: flex;
+     flex-direction: column;
+     z-index: 1000; /* Garante que fique acima de tudo */
+     font-family: 'Poppins', sans-serif;
+     transition: transform 0.3s ease, opacity 0.3s ease;
+ }
+
+ /* Estado Oculto (Escondido) */
+ .chat-widget.hidden {
+     transform: translateY(20px);
+     opacity: 0;
+     pointer-events: none; /* Impede cliques quando invisível */
+ }
+
+ /* Cabeçalho */
+ .chat-header {
+     background-color: #fdfdfd;
+     padding: 15px;
+     border-bottom: 2px solid #1a1a1a;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-radius: 10px 10px 0 0;
+ }
+
+ .chat-title {
+     font-family: 'Times New Roman', serif;
+     font-weight: bold;
+     font-size: 1.2rem;
+     color: #7d1758; /* Roxo da marca */
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }
+
+ .chat-close-btn {
+     background: none;
+     border: none;
+     font-size: 1.5rem;
+     cursor: pointer;
+     color: #1a1a1a;
+     transition: color 0.2s;
+ }
+
+ .chat-close-btn:hover { color: #d81b60; }
+
+ /* Corpo (Mensagens) */
+ .chat-body {
+     flex: 1; /* Ocupa o espaço restante */
+     padding: 15px;
+     background-color: #f9f9f9;
+     overflow-y: auto; /* Barra de rolagem se tiver muita mensagem */
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+ }
+
+ /* Balões de Mensagem */
+ .message {
+     max-width: 80%;
+     padding: 10px 14px;
+     border-radius: 10px;
+     font-size: 0.9rem;
+     line-height: 1.4;
+     position: relative;
+     border: 1px solid #1a1a1a;
+     box-shadow: 2px 2px 0 0 rgba(0,0,0,0.2);
+ }
+
+ /* Mensagem do Sistema/Outro */
+ .message.system {
+     align-self: flex-start;
+     background-color: #ffffff;
+     color: #333;
+     border-bottom-left-radius: 0;
+ }
+
+ /* Mensagem do Usuário (Você) */
+ .message.user {
+     align-self: flex-end;
+     background-color: #cbf5d0; /* Verde da marca */
+     color: #000;
+     border-bottom-right-radius: 0;
+ }
+
+ .message .time {
+     display: block;
+     font-size: 0.7rem;
+     color: #666;
+     margin-top: 5px;
+     text-align: right;
+ }
+
+ /* Rodapé (Input) */
+ .chat-footer {
+     padding: 10px;
+     border-top: 2px solid #1a1a1a;
+     background-color: #fff;
+     border-radius: 0 0 10px 10px;
+     display: flex;
+     gap: 10px;
+ }
+
+ #chat-input {
+     flex: 1;
+     padding: 10px;
+     border: 2px solid #1a1a1a;
+     border-radius: 6px;
+     outline: none;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ #chat-input:focus {
+     box-shadow: 2px 2px 0 0 #d7aefb;
+ }
+
+ .chat-send-btn {
+     background-color: #7d1758;
+     color: white;
+     border: 2px solid #1a1a1a;
+     border-radius: 6px;
+     width: 40px;
+     cursor: pointer;
+     font-size: 1.2rem;
+     transition: transform 0.1s;
+ }
+
+ .chat-send-btn:hover { background-color: #5a0d35; }
+ .chat-send-btn:active { transform: scale(0.95); }
+
+ /* =========================================
+    NOVOS ESTILOS: BOTÕES NOS CARDS
+    (Isso alinha o ícone do chat ao lado do nome da facção)
+    ========================================= */
+
+ .card-top {
+     display: flex;
+     justify-content: space-between; /* Joga o título pra esq e botão pra dir */
+     align-items: center;
+     margin-bottom: 0.5rem;
+ }
+
+ /* Remove a margem padrão do título para ele alinhar certinho com o botão */
+ .card h3 {
+     margin-bottom: 0;
+ }
+
+ .btn-chat-card {
+     background: transparent;
+     border: none;
+     font-size: 1.4rem;
+     cursor: pointer;
+     color: #7d1758; /* Roxo da marca */
+     transition: transform 0.2s ease, color 0.2s ease;
+     padding: 5px;
+ }
+
+ .btn-chat-card:hover {
+     transform: scale(1.15);
+     color: #d81b60;
+ }
