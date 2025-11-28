@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Linhas - Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="frontend/css/app.css">
+</head>
+<body>
+<header class="header">
+    <h1>Entre Linhas</h1>
+    <div class="user-info">
+        <span id="welcome-name"></span>
+        <span id="welcome-role" class="chip"></span>
+        <button id="logout" class="btn secondary">Sair</button>
+    </div>
+</header>
+<div class="layout">
+    <aside class="sidebar">
+        <h2 class="section-title">Status</h2>
+        <div id="status" class="alert">Pronto para testar a API.</div>
+        <p id="user-summary"></p>
+        <form id="availability-form" class="section">
+            <h3>Disponibilidade</h3>
+            <label><input type="checkbox" id="availability"> Estou disponível</label>
+            <button class="btn" type="submit">Salvar</button>
+        </form>
+        <form id="open-chat-form" class="section">
+            <h3>Abrir chat por ID</h3>
+            <div class="form-group">
+                <label for="chat-user-id">ID do usuário</label>
+                <input type="number" id="chat-user-id" min="1" />
+            </div>
+            <button class="btn" type="submit">Abrir chat</button>
+        </form>
+    </aside>
+
+    <main class="content-panel">
+        <section class="section">
+            <h3>Buscar usuários</h3>
+            <form id="search-form">
+                <div class="card-list">
+                    <div class="form-group">
+                        <label for="search-name">Nome</label>
+                        <input type="text" id="search-name" placeholder="Buscar por nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-type">Tipo</label>
+                        <select id="search-type">
+                            <option value="">Todos</option>
+                            <option value="COMPANY">Empresa</option>
+                            <option value="FACTION">Facção</option>
+                            <option value="FACCIONISTA">Faccionista</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="search-state">Estado</label>
+                        <input type="text" id="search-state" placeholder="UF">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-city">Cidade</label>
+                        <input type="text" id="search-city" placeholder="Cidade">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-mainService">Serviço principal</label>
+                        <input type="text" id="search-mainService" placeholder="ex: costura">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-availability">Disponibilidade</label>
+                        <select id="search-availability">
+                            <option value="">Todas</option>
+                            <option value="true">Disponível</option>
+                            <option value="false">Indisponível</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" type="submit">Buscar</button>
+            </form>
+            <div id="search-results" class="card-list"></div>
+        </section>
+
+        <section class="section">
+            <h3>Perfil selecionado</h3>
+            <div id="profile-details">Escolha um usuário para ver detalhes.</div>
+        </section>
+
+        <section class="section">
+            <h3>Solicitações de serviço</h3>
+            <form id="request-form" class="card-list">
+                <div class="form-group">
+                    <label for="req-name">Nome do pedido</label>
+                    <input type="text" id="req-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="req-description">Descrição</label>
+                    <textarea id="req-description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="req-faction">ID da facção</label>
+                    <input type="number" id="req-faction" required>
+                </div>
+                <div class="form-group">
+                    <label for="req-service">ID do serviço</label>
+                    <input type="number" id="req-service" required>
+                </div>
+                <button class="btn" type="submit">Criar solicitação (empresa)</button>
+            </form>
+            <div id="request-list" class="card-list"></div>
+        </section>
+
+        <section class="section">
+            <h3>Chat</h3>
+            <div class="card-list">
+                <div>
+                    <h4>Conversas</h4>
+                    <div id="chat-list" class="card-list"></div>
+                </div>
+                <div>
+                    <h4>Mensagens</h4>
+                    <div id="message-box" class="messages"></div>
+                    <form id="message-form" class="form-group" style="margin-top:0.5rem;">
+                        <label for="message-content">Mensagem</label>
+                        <input type="text" id="message-content" placeholder="Digite e envie">
+                        <button class="btn" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Avaliações</h3>
+            <form id="review-form" class="card-list">
+                <div class="form-group">
+                    <label for="review-receiver">ID do avaliado</label>
+                    <input type="number" id="review-receiver" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-request">ID da solicitação</label>
+                    <input type="number" id="review-request" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">Nota (1-5)</label>
+                    <input type="number" id="review-rating" min="1" max="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-comment">Comentário</label>
+                    <textarea id="review-comment"></textarea>
+                </div>
+                <button class="btn" type="submit">Enviar avaliação</button>
+            </form>
+            <div id="review-list" class="card-list"></div>
+        </section>
+    </main>
+</div>
+<footer>
+    Ferramenta básica para testar todos os endpoints do backend.
+</footer>
+<script src="frontend/js/app.js"></script>
+</body>
+</html>

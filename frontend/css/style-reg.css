@@ -1,0 +1,187 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../images/backg-reg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+/* Sobreposição escura para leitura */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(255, 240, 245, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+/* Cabeçalho */
+.header-faixa {
+    width: 100%;
+    background-color: #fdfdfd;
+    color: #7d1758;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    border-bottom: 2px solid #1a1a1a;
+    margin-bottom: auto;
+}
+
+/* Container do Formulário */
+.cadastro-container {
+    width: 90%;
+    max-width: 550px;
+    background-color: #ffffff;
+    border: 2px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 6px 6px 0 0 rgba(0,0,0,0.8); 
+    margin: 40px 0;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Times New Roman', serif;
+    color: #1a1a1a;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+/* Estilização dos Inputs */
+.campo-grupo { margin-bottom: 20px; }
+
+.campo-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.campo-grupo input,
+.campo-grupo select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: #f9f9f9;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.campo-grupo.senha-wrapper {
+    position: relative;
+}
+
+.toggle-senha {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #7d1758;
+    padding: 0;
+}
+
+/* Efeito quando clica no input */
+.campo-grupo input:focus,
+.campo-grupo select:focus {
+    background: #fff;
+    box-shadow: 4px 4px 0 0 #d7aefb;
+    transform: translate(-2px, -2px);
+}
+
+.feedback {
+    margin: 10px 0 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.feedback.error {
+    color: #b00020;
+}
+
+.feedback.success {
+    color: #1b5e20;
+}
+
+/* Ajuste da seta do Select */
+.campo-grupo select {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="black"><path d="M6 9L1 4h10L6 9z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    appearance: none;
+}
+
+/* Container dos Botões */
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+/* Botão Comum (Base) */
+.btn-voltar, 
+.btn-confirmar {
+    padding: 14px 25px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 4px 4px 0 0 #1a1a1a;
+    transition: all 0.1s ease;
+}
+
+/* Cores Específicas */
+.btn-confirmar {
+    background-color: #cbf5d0;
+    color: #000;
+    flex: 1;
+}
+
+.btn-voltar {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Efeito de Clique (Afundar) */
+.btn-confirmar:active, 
+.btn-voltar:active {
+    box-shadow: 0 0 0 0 #000;
+    transform: translate(4px, 4px);
+}
+
+/* Rodapé */
+.footer-faixa {
+    width: 100%;
+    background-color: #fdfdfd;
+    border-top: 2px solid #1a1a1a;
+    color: #555;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}

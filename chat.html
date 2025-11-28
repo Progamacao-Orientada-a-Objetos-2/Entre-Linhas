@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Linhas - Chat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="frontend/css/app-shell.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Entre Linhas</div>
+    <div class="user-chip">
+        <div>
+            <div id="user-name"></div>
+            <div class="pill" id="user-type"></div>
+        </div>
+        <button id="menu-toggle" class="menu-btn">☰</button>
+    </div>
+</header>
+<div id="menu-overlay" class="menu-overlay"></div>
+<aside id="menu-drawer" class="menu-drawer">
+    <h3>Menu</h3>
+    <ul class="menu-list">
+        <li><button data-link="faccionista-page.html">Busca</button></li>
+        <li><button data-link="my-profile.html">Meu perfil</button></li>
+        <li><button id="menu-logout">Sair</button></li>
+    </ul>
+</aside>
+
+<main class="page">
+    <div class="section-nav">
+        <button class="btn-secondary" onclick="window.history.back();">Voltar</button>
+    </div>
+    <div class="card">
+        <h2 class="section-title">Chat</h2>
+        <form id="open-chat-form" class="form-grid">
+            <label class="label" for="chat-user-id">Abrir chat com usuário (ID)</label>
+            <input id="chat-user-id" type="number" placeholder="Ex: 5">
+            <button class="btn-primary" type="submit">Abrir chat</button>
+        </form>
+        <div class="form-row" style="margin-top:1rem;">
+            <div class="card">
+                <h3>Conversas</h3>
+                <div id="chat-list" class="form-grid"></div>
+            </div>
+            <div class="card">
+                <h3>Mensagens</h3>
+                <div id="message-box" class="form-grid"></div>
+                <form id="message-form" class="form-grid" style="margin-top:0.5rem;">
+                    <input type="hidden" id="chat-id">
+                    <label class="label" for="message-content">Mensagem</label>
+                    <input id="message-content" type="text" placeholder="Digite sua mensagem">
+                    <button class="btn-primary" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+    </div>
+</main>
+
+<script src="frontend/js/common.js"></script>
+<script src="frontend/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Faccionista</title>
+    <link rel="stylesheet" href="frontend/css/style-reg.css">
+</head>
+
+<body>
+
+    <header class="header-faixa">
+        Entre-Linhas
+    </header>
+
+    <div class="cadastro-container">
+
+        <div class="titulo">
+            Cadastro - Faccionista
+        </div>
+
+        <form id="register-form" data-user-type="FACCIONISTA">
+
+            <div class="campo-grupo">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" name="cpf"
+                       placeholder="000.000.000-00"
+                       title="Digite o CPF"
+                       required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="data-nascimento">Data de nascimento</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado" required>
+                    <option value="" disabled selected>Selecione o estado</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" list="lista-cidades" required>
+                <datalist id="lista-cidades"></datalist>
+            </div>
+
+            <div class="campo-grupo">
+                <label for="servico-id">Serviço principal</label>
+                <select id="servico-id" name="servico-id" required>
+                    <option value="" disabled selected>Selecione</option>
+                </select>
+            </div>
+
+            <div class="campo-grupo senha-wrapper">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" minlength="8" required>
+                <button type="button" class="toggle-senha" data-target="senha">👁</button>
+            </div>
+
+            <div class="campo-grupo senha-wrapper">
+                <label for="confirmacao-senha">Confirmação de senha</label>
+                <input type="password" id="confirmacao-senha" name="confirmacao-senha" minlength="8" required>
+                <button type="button" class="toggle-senha" data-target="confirmacao-senha">👁</button>
+            </div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <div class="botoes-container">
+                <a href="choose-reg.html" class="btn-voltar">Voltar</a>
+                <button type="submit" class="btn-confirmar">
+                    Confirmar cadastro
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <footer class="footer-faixa">
+        &copy; 2025 Entre-Linhas - Todos os direitos reservados.
+    </footer>
+
+    <script src="frontend/js/main.js"></script>
+    <script src="frontend/js/auth.js"></script>
+
+</body>
+</html>

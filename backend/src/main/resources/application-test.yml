@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:testdb}}
+    username: ${DB_USER:test}
+    password: ${DB_PASSWORD:test}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+  liquibase:
+    enabled: true

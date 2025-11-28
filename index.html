@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Entre Linhas - Frontend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./frontend/css/style-login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Projeto Entre Linhas</h1>
-    <p>Frontend</p>
+
+<div class="login-container">
+
+    <h2>Entre-Linhas</h2>
+    <p class="descricao">Acesse sua conta para continuar</p>
+
+    <form id="login-form">
+
+        <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+        </div>
+
+        <div class="campo senha-wrapper">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha" required>
+            <button type="button" class="toggle-senha" data-target="senha">👁</button>
+        </div>
+
+        <div class="login-links">
+            <a href="choose-reg.html">Cadastre-se</a>
+            <a href="forg-pwd.html">Esqueci minha senha</a>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+
+        <button type="submit" class="btn-login">Entrar</button>
+    </form>
+</div>
+
+<script src="frontend/js/auth.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Linhas - Perfil</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="frontend/css/faccionista.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="topbar home-topbar">
+    <div class="logo">
+        <img src="frontend/images/agulha.png" alt="Agulha e Linha" class="logo-icon">
+        Entre-Linhas
+    </div>
+    <div class="header-actions">
+        <div class="user-meta">
+            <div id="user-name" class="user-name"></div>
+            <span class="pill" id="user-type"></span>
+        </div>
+        <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+        <div class="menu-panel" id="menu-panel">
+            <button data-action="profile">Meu perfil</button>
+            <button data-action="logout">Sair</button>
+            <button class="danger" data-action="delete">Deletar conta</button>
+        </div>
+    </div>
+</header>
+<div id="menu-overlay" class="menu-overlay"></div>
+
+<main class="container home-content">
+    <section class="panel">
+        <div class="panel-header">
+            <div class="section-nav">
+                <button class="btn-secondary" onclick="window.history.back();">Voltar</button>
+                <button class="btn-secondary" data-link="faccionista-page.html">Ir para a busca</button>
+            </div>
+            <h2 id="profile-name">Perfil</h2>
+        </div>
+        <p class="text-muted" id="profile-type"></p>
+        <div class="chips">
+            <span class="chip" id="profile-location"></span>
+            <span class="chip">Serviço: <span id="profile-service"></span></span>
+            <span class="chip">Avaliação: <span id="profile-rating"></span></span>
+            <span class="chip">Serviços: <span id="profile-services"></span></span>
+            <span class="chip">Disponibilidade: <span id="profile-availability"></span></span>
+        </div>
+        <p id="profile-desc" class="description"></p>
+        <div id="profile-specific"></div>
+        <div class="card-actions" id="profile-actions"></div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+    </section>
+</main>
+
+<footer>
+    © 2025 Entre-Linhas — Todos os direitos reservados.
+</footer>
+
+<script src="frontend/js/common.js"></script>
+<script src="frontend/js/profile.js"></script>
+</body>
+</html>
